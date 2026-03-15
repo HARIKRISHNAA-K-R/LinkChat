@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, join_room, leave_room, send, emit
 
-app = Flask(__name__, template_folder="template")
+app = Flask(__name__, template_folder="templates")
 socketio = SocketIO(app)
 
 rooms = {}
