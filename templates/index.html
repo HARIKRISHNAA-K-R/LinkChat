@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Chat</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div id="joinScreen" class="screen">
+    <div class="join-card">
+      <h1>IP Chat</h1>
+      <p class="subtitle">Private rooms, real-time messaging</p>
+      <input id="usernameInput" type="text" placeholder="Your name" maxlength="20" autocomplete="off">
+      <input id="roomInput" type="text" placeholder="Room ID" maxlength="20" autocomplete="off">
+      <button onclick="joinRoom()">Join Room</button>
+      <p id="joinError" class="error-msg"></p>
+    </div>
+  </div>
+
+  <div id="chatScreen" class="screen hidden">
+    <div class="chat-header">
+      <div class="header-info">
+        <span id="roomLabel"></span>
+        <span id="onlineCount" class="online-badge"></span>
+      </div>
+      <button id="leaveBtn" onclick="leaveRoom()">Leave</button>
+    </div>
+
+    <div id="chatBox"></div>
+
+    <div class="input-row">
+      <input id="msgInput" type="text" placeholder="Type a message..." maxlength="500" autocomplete="off">
+      <button id="sendBtn" onclick="sendMsg()">Send</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>
